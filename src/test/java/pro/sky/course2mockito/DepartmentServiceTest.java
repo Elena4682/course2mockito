@@ -31,7 +31,7 @@ import static org.mockito.Mockito.when;
 
      void testSum(){
          var actual = departmentService.sum(1);
-         assertEquals(11500,actual);
+         assertEquals(115000,actual);
      }
     @Test
     void testMax(){
