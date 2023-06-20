@@ -14,8 +14,8 @@ public class EmployeeServiceImplTest {
     }
     @Test
     public void addTest(){
-        var expected = new Employee("name4", "surname4", 4,50000);
-        var actual = employeeService.add("name4", "surname4", 4,50000);
+        var expected = new Employee("na", "sur", 4,50000);
+        var actual = employeeService.add("na", "sur", 4,50000);
         assertEquals(expected,actual);
     }
     @Test
@@ -26,13 +26,13 @@ public class EmployeeServiceImplTest {
     }
     @Test
     public void deleteTest(){
-        var expected = employeeService.add("name4", "surname4", 4,50000);
-        var actual = employeeService.delete("name4", "surname4", 4,50000);
+        var expected = employeeService.add("na", "sur", 4,50000);
+        var actual = employeeService.delete("na", "sur", 4,50000);
         assertEquals(expected,actual);
     }
     @Test
     public void deleteNegativeTest(){
-        employeeService.add("name4", "surname4", 4,50000);
+        employeeService.add("na", "sur", 4,50000);
         assertThrows(EmployeeNotFoundException.class,() -> employeeService.delete("name", "surname"
                 , 1,50000));
     }
@@ -45,7 +45,7 @@ public class EmployeeServiceImplTest {
     @Test
     public void findNegativeTest(){
         employeeService.add("name", "surname", 1,50000);
-        assertThrows(EmployeeNotFoundException.class,() -> employeeService.find("name4", "surname4",
+        assertThrows(EmployeeNotFoundException.class,() -> employeeService.find("na", "sur",
                 4,50000));
     }
 
